@@ -19,6 +19,52 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(2150)
     DFRobotMaqueenPlus.mototStop(Motors.ALL)
     basic.pause(100)
+    basic.showIcon(IconNames.Square)
+    basic.pause(100)
+    basic.showIcon(IconNames.SmallSquare)
+    basic.pause(100)
+    basic.showIcon(IconNames.Square)
+    basic.pause(100)
+    basic.showIcon(IconNames.SmallSquare)
+    basic.pause(100)
+    for (let index = 0; index < 3; index++) {
+        DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CW, 0)
+        basic.pause(100)
+        DFRobotMaqueenPlus.mototStop(Motors.M1)
+        basic.pause(100)
+        DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CW, 0)
+        basic.pause(100)
+        DFRobotMaqueenPlus.mototStop(Motors.M1)
+        basic.pause(100)
+        DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CW, 0)
+        basic.pause(100)
+        DFRobotMaqueenPlus.mototStop(Motors.M1)
+        basic.pause(100)
+        DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CW, 0)
+        basic.pause(100)
+        DFRobotMaqueenPlus.mototStop(Motors.M1)
+        basic.pause(100)
+    }
+    for (let index = 0; index < 2; index++) {
+        basic.showIcon(IconNames.Confused)
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            # . # . #
+            . # . # .
+            `)
+    }
+    DFRobotMaqueenPlus.mototRun(Motors.M2, Dir.CW, 75)
+    DFRobotMaqueenPlus.mototRun(Motors.M1, Dir.CCW, 75)
+    basic.pause(2150)
+    DFRobotMaqueenPlus.mototStop(Motors.ALL)
+    basic.pause(100)
+    DFRobotMaqueenPlus.mototRun(Motors.M1, Dir.CW, 75)
+    DFRobotMaqueenPlus.mototRun(Motors.M2, Dir.CCW, 75)
+    basic.pause(2150)
+    DFRobotMaqueenPlus.mototStop(Motors.ALL)
+    basic.pause(100)
 })
 let led2 = 0
 DFRobotMaqueenPlus.I2CInit()
